@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Basic Calculator</title>
-
 <style>
 *{
     margin:0;
@@ -12,7 +11,6 @@
     box-sizing:border-box;
     font-family:Arial, sans-serif;
 }
-
 body{
     height:100vh;
     display:flex;
@@ -20,8 +18,6 @@ body{
     align-items:center;
     background:linear-gradient(to right,#1e3a8a,#2563eb);
 }
-
-/* Calculator Box */
 .calculator{
     background:#ffffff;
     padding:20px;
@@ -29,8 +25,6 @@ body{
     box-shadow:0 10px 25px rgba(0, 0, 0, 0.2);
     width:320px;
 }
-
-/* Display */
 .display{
     width:100%;
     height:60px;
@@ -42,14 +36,11 @@ body{
     font-size:24px;
     padding:10px;
 }
-
-/* Grid Layout */
 .buttons{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:10px;
 }
-
 button{
     padding:15px;
     font-size:18px;
@@ -112,70 +103,52 @@ button:hover{
         <button class="operator">+</button>
     </div>
 </div>
-
 <script>
-
-/* Calculator Class (OOP) */
 class Calculator {
     constructor(displayElement){
         this.displayElement = displayElement;
         this.currentInput = "";
     }
-
     appendNumber(number){
         this.currentInput += number;
         this.updateDisplay();
     }
-
     appendOperator(operator){
         if(this.currentInput === "") return;
 
         const lastChar = this.currentInput.slice(-1);
-
-        // Prevent double operators using if-else
         if(lastChar === "+" || lastChar === "-" || 
            lastChar === "*" || lastChar === "/"){
             this.currentInput = this.currentInput.slice(0,-1);
         }
-
         this.currentInput += operator;
         this.updateDisplay();
     }
-
     clear(){
         this.currentInput = "";
         this.updateDisplay();
     }
-
     calculate(){
         const lastChar = this.currentInput.slice(-1);
-
-        // Prevent calculation if expression ends with operator
         if(lastChar === "+" || lastChar === "-" || 
            lastChar === "*" || lastChar === "/"){
             return;
         }
-
         try{
             this.currentInput = eval(this.currentInput).toString();
         }
         catch{
             this.currentInput = "Error";
         }
-
         this.updateDisplay();
     }
-
     updateDisplay(){
         this.displayElement.value = this.currentInput;
     }
 }
 
-/* Initialize */
 const display = document.getElementById("display");
 const calculator = new Calculator(display);
-
-/* Event Listeners */
 document.querySelectorAll(".number").forEach(button => {
     button.addEventListener("click", () => {
         calculator.appendNumber(button.textContent);
@@ -200,4 +173,5 @@ document.querySelector(".equal").addEventListener("click", () => {
 
 </body>
 </html>
+
 
