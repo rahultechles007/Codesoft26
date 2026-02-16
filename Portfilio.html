@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name | Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(to right, #ffffff, #f0f6ff);
+    color: #111;
+}
+
+/* Main Container */
+.container {
+    display: grid;
+    grid-template-rows: 90px 1fr 50px;
+    height: 100vh;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #0f172a, #2563eb);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    letter-spacing: 1px;
+}
+
+header h1 {
+    font-size: 30px;
+}
+
+header p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Main Grid */
+.main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Card Style */
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    border-left: 5px solid #2563eb;
+    transition: 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(37, 99, 235, 0.3);
+}
+
+.card h2 {
+    color: #2563eb;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* About */
+.about img {
+    width: 110px;
+    height: 190px;
+    border: 3px solid #2563eb;
+    margin-bottom: 10px;
+}
+
+/* Skills */
+.skills li {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    padding: 10px 12px;
+    margin: 4px;
+    border-radius: 20px;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.skills li:hover {
+    background: #0f172a;
+}
+
+/* Project */
+.project img {
+    width: 500px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+/* Resume Button */
+.resume a {
+    background: #2563eb;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 25px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.resume a:hover {
+    background: #0f172a;
+}
+
+/* Contact */
+.contact p {
+    font-size: 13px;
+    margin: 5px 0;
+}
+
+/* Footer */
+footer {
+    background: #0f172a;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+/* Responsive */
+@media(max-width: 900px){
+    .main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<header>
+    <h1>Binod Kuamr Pradhan </h1>
+    <p>Creative Web Developer | AI Enthusiast | Analysis </p>
+</header>
+
+<div class="main">
+
+    <div class="card about">
+        <h2>About Me</h2>
+        <img src="rahul.jpg" alt="Binod Kumar Pradhan ">
+        <p><i>I am a beginner web developer skilled in creating responsive and modern websites using HTML CSS and javascript .  </i></p>
+    </div>
+
+    <div class="card skills">
+        <h2>Skills</h2>
+        <ul style="list-style:none;">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Python</li>
+            <li>C and C++</li>
+        </ul>
+        <h2>Tools </h2>
+        <ul style="list-style:none;">
+            <li>Git&Github</li>
+            <li>VS Code</li>
+            <li>Chromw Devtools</li>
+        </ul>
+         <h2>currently learning  </h2>
+        <ul style="list-style:none;">
+            <li>javaScript</li>
+            <li>AIML</li>
+            <li>Backend Basics</li>
+        </ul>
+          
+        
+    </div>
+
+    <div class="card project">
+        <h2>Project</h2>
+        <img src="portfolio.png" alt="Portfolio">
+        <p><strong>Portfolio Website:</strong> A stylish personal website showcasing my work and skills.</p>
+        <p><b>Technologies Used : </b> </p>
+            <p> HTML </p>
+            <P>  CSS </P>
+            <P>  JavaScript </P><br><br>
+            <p><b>This project reflects my ability to build real-world, Beginner web interfaces while maintaining performance and  responsiveness</b></p>
+    </div>
+
+    <div class="card resume">
+        <h2>Resume</h2>
+        <p>Download my professional resume below:</p>
+        <a href="portfolio.png" download>Download CV</a>
+    </div>
+
+    <div class="card contact">
+        <h2>Contact</h2>
+        <p>Email: binodkumarpradhan145@email.com</p>
+        <p>Address : Bhubaneswar </p>
+        <p> LinkedIn profile : https://www.linkedin.com/in/binod-kumar-pradhan-980814339?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app</p>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Binod Kumar Pradhan | Designed with HTML & CSS
+</footer>
+
+</div>
+
+</body>
+</html>
